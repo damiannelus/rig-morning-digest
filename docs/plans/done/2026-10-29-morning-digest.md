@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-10-29
 ---
 
 # Morning digest
@@ -77,3 +78,19 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Closed |
+|---|-------|-----------|--------|--------|
+| 1 | Run log reader (src/digest/) | — | claude-code · devstral:24b · medium | 2026-10-29 |
+| 2 | Digest page: GET /digest/:night | #1 | claude-code · devstral:24b · medium | 2026-10-29 |
+| 3 | Digest JSON: GET /api/digest/:night | #1 | claude-code · devstral:24b · medium | 2026-10-29 |
+| 4 | Status board: link each night to its digest | #1 | claude-code · devstral:24b · medium | 2026-10-29 |
+| 5 | Route tests for the digest | #1 | claude-code · devstral:24b · medium | 2026-10-29 |
+| 6 | Preview for review (public HTML copy) | #2–#5 | claude-code · opus-4.8 · medium | 2026-10-29 |
+| 7 | Clean up: drop marker, move plan to done | #6 | claude-code · opus-4.8 · medium | 2026-10-29 |
+
+Preview: one self-contained HTML file on a public gist, served via gist.githack.com. The lane
+marker was removed from the live link after the review (ADR 0003); the gist's history still holds
+the marked revision.
