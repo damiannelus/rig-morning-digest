@@ -66,3 +66,9 @@ export const readNight: ReadNight = (runsDir, night) => {
   rows.sort((a, b) => a.job.localeCompare(b.job));
   return rows;
 };
+
+export function nightCounts(rows: DigestRow[]): { ok: number; retry: number; fail: number } {
+  const counts = { ok: 0, retry: 0, fail: 0 };
+  for (const r of rows) counts[r.lastStatus] += 1;
+  return counts;
+}
